@@ -3,12 +3,12 @@
     form.form-horizontal
       .form-group
         label.col-md-3 Enter a nubmer (id) to start list from (by default starts from 1)
-        .col-md-4
+        .col-md-4.col-xs-6
           input(ng-model="id_query", class="form-control")
-        .col-md-4
+        .col-md-4.col-xs-6
           button(type="button", class="btn btn-primary", ng-click="changeList()") Change user listing
 
-    ul.gh__users-list
+    ul.gh__users-list.row
       li.gh__users-box(data-ng-repeat="user in users | orderBy: '+login' | limitTo:30")
         a(href="#/users/{{user.login}}")
           .user-avatar

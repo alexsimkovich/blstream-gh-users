@@ -4,7 +4,6 @@
 }
 
 .gh__users-list {
-  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -16,7 +15,7 @@
   align-content: center;
   justify-content: center;
   width: 16.6666667%;
-  padding: 10px;
+  padding: 10px 15px;
   text-align: center;
 
   @media (min-width: 768px) and (max-width: 991px) {
