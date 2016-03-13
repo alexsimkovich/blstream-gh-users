@@ -1,0 +1,61 @@
+// Apply a prefixed transformation
+@mixin sq-transform($params) {
+  -webkit-transform: $params; // Chrome, Safari 3.1+
+  //-moz-transform: $params; // Firefox 3.5-15
+  -ms-transform: $params; // IE 9
+  transform: $params;
+}
+
+@mixin sq-scale($params) {
+  -webkit-transform: scale($params);
+  -moz-transform: scale($params) rotate(0.01deg);
+  -ms-transform: scale($params);
+  -o-transform: scale($params);
+}
+
+@mixin sq-box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
+// Legacy border radius helper
+@mixin sq-border-radius($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+
+}
+
+// Opacity with IE filter fallback
+// Value should be expressed as a number between 0 and 100
+// with 0 being transparent and 100 being opaque
+@mixin sq-opacity($value) {
+  $decimal-value: $value/100;
+  -webkit-opacity: $decimal-value;
+  -moz-opacity: $decimal-value;
+  opacity: $decimal-value;
+  -ms-filter: #{"alpha(opacity=" + $value + ")"};
+  filter: alpha(opacity=$value);
+}
+
+// Individual border radius rule helper.
+@mixin sq-rounded($vert, $horz, $radius: 10px) {
+  -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+  -moz-border-radius-#{$vert}#{$horz}: $radius;
+  border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+@mixin sq-inline-block() {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+@mixin sq-position-center() {
+  margin: 0 auto;
+}
+
+@mixin sq-text-align-center() {
+  text-align: center;
+}

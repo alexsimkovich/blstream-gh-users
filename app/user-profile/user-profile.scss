@@ -1,0 +1,84 @@
+.gh__user-detail {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    padding-top: 10px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 0;
+  }
+}
+
+.gh__user__profile-box {
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.gh__user-ava {
+  border-radius: 3px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+}
+
+.gh__user__info-general {
+  p {
+    &.user-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    &.user-login {
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    span {
+      margin-right: 4px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+.gh__user__info-general,
+.gh__user__info-additional {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (max-width: 991px) {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.gh__user__info-additional {
+  text-align: center;
+  a {
+    margin-left: 10px;
+    margin-right: 10px;
+    span {
+      margin-right: 4px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+

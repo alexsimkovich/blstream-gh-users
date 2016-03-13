@@ -1,0 +1,38 @@
+.gh__user-detail
+  .container
+    h2 {{user.name}} User Details
+    .gh__user__profile-box
+      .row
+        .col-md-3.col-sm-6
+          .gh__user-ava
+            img(class="img-responsive", ng-src="{{user.avatar_url}}", alt="{{user.login}}")
+        .col-md-9.col-sm-6
+          .gh__user-details
+            .gh__user__info-general
+              p.user-name
+                | {{user.name}}
+              p.user-login
+                | @{{user.login}}
+              p.user-company(ng-if="user.company")
+                span.glyphicon.glyphicon-home
+                | {{user.company}}
+              p.user-location(ng-if="user.location")
+                span.glyphicon.glyphicon-map-marker
+                | {{user.location}}
+              p.user-blog(ng-if="user.blog")
+                span.glyphicon.glyphicon-cloud
+                a(href="{{user.blog}}", target="_blank") {{user.blog}}
+              p.user-email(ng-if="user.email")
+                span.glyphicon.glyphicon-envelope
+                a(href="{{user.email}}", target="_blank") {{user.email}}
+              p.user-join
+                span.glyphicon.glyphicon-time
+                | Joined on {{user.created_at | date:'MMM dd, yyyy'}}
+
+            .gh__user__info-additional
+              a.followers(class="btn btn-primary", href="{{user.html_url}}/followers", target="_blank")
+                span.glyphicon.glyphicon-user
+                | {{user.followers}} followers
+              a.followers(class="btn btn-primary", href="{{user.html_url}}/following", target="_blank")
+                span.glyphicon.glyphicon-star
+                | {{user.following}} following

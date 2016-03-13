@@ -1,0 +1,101 @@
+.gh__users {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.gh__users-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gh__users-box {
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 16.6666667%;
+  padding: 10px;
+  text-align: center;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 25%;
+  }
+
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    color: #666;
+    overflow: hidden;
+  }
+
+  .user-avatar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .3);
+    &:before {
+      content: "";
+      -webkit-transition: .3s all linear;
+      -moz-transition: .3s all linear;
+      -ms-transition: .3s all linear;
+      -o-transition: .3s all linear;
+      transition: .3s all linear;
+    }
+  }
+
+  .user-login {
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    right: 0;
+    padding-top: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-transition-delay: .25s;
+    -moz-transition-delay: .25s;
+    -ms-transition-delay: .25s;
+    -o-transition-delay: .25s;
+    transition-delay: .25s;
+    -webkit-transition: .4s all ease-in-out;
+    -moz-transition: .4s all ease-in-out;
+    -ms-transition: .4s all ease-in-out;
+    -o-transition: .4s all ease-in-out;
+    transition: .4s all ease-in-out;
+
+    @media (max-width: 991px) {
+      bottom: 0;
+      font-size: 18px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .user-login {
+      bottom: 0;
+    }
+    .user-avatar {
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.3);
+      }
+    }
+  }
+}
+
+
+
+

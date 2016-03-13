@@ -1,0 +1,17 @@
+.container
+  .gh__users
+    form.form-horizontal
+      .form-group
+        label.col-md-3 Enter a nubmer (id) to start list from (by default starts from 1)
+        .col-md-4
+          input(ng-model="id_query", class="form-control")
+        .col-md-4
+          button(type="button", class="btn btn-primary", ng-click="changeList()") Change user listing
+
+    ul.gh__users-list
+      li.gh__users-box(data-ng-repeat="user in users | orderBy: '+login' | limitTo:30")
+        a(href="#/users/{{user.login}}")
+          .user-avatar
+            img(class="img-responsive", ng-src="{{user.avatar_url}}", alt="{{user.login}}")
+          .user-login
+            | {{user.login}}
